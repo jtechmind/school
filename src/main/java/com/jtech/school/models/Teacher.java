@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Teacher")
 public class Teacher {
     @Id
-    private ObjectId id;
+    private String id;
     private String firstName;
     private String middleName;
     private String lastName;
@@ -17,11 +17,11 @@ public class Teacher {
     public Teacher() {
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
