@@ -2,25 +2,26 @@ package com.jtech.school.models;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.annotation.Collation;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "student")
-public class Student {
+@Document(collection = "Teacher")
+public class Teacher {
     @Id
-    private String id;
+    private ObjectId id;
     private String firstName;
+    private String middleName;
     private String lastName;
     private String email;
-    private String course;
 
-    public Student() {
+    public Teacher() {
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -30,6 +31,14 @@ public class Student {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public String getLastName() {
@@ -48,22 +57,14 @@ public class Student {
         this.email = email;
     }
 
-    public String getCourse() {
-        return course;
-    }
-
-    public void setCourse(String course) {
-        this.course = course;
-    }
-
     @Override
     public String toString() {
-        return "Student{" +
-                "studentId=" + id +
+        return "Teacher{" +
+                "id=" + id +
                 ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", course='" + course + '\'' +
                 '}';
     }
 }
