@@ -27,4 +27,9 @@ public class CourseController {
        List<Course> courses = courseService.getAllCourses();
        return new ResponseEntity<>(courses,HttpStatus.OK);
     }
+
+    public ResponseEntity<Course> getOneCourseById(@RequestBody String id){
+        Course course = courseService.getCourseById(id);
+        return new ResponseEntity<>(course,HttpStatus.OK);
+    }
 }
