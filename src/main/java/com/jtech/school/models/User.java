@@ -1,4 +1,8 @@
 package com.jtech.school.models;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
@@ -8,6 +12,9 @@ import java.util.Collection;
 import java.util.List;
 
 @Document(collection = "User")
+@Data
+@Builder
+@AllArgsConstructor
 public class User implements UserDetails {
     @Id
     private String id;
